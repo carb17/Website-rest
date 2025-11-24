@@ -9,8 +9,18 @@ import '../styles/client.css';
 export default function HomeClient() {
   const { products, loading, error } = useProducts();
 
-  if (loading) return <p>Cargando productos...</p>;
-  if (error) return <p>{error}</p>;
+  if (loading)
+    return (
+      <Layout>
+        <p className='products__loading'>Loading products...</p>
+      </Layout>
+    );
+  if (error)
+    return (
+      <Layout>
+        <p className='products__error'>{error}</p>
+      </Layout>
+    );
 
   return (
     <Layout>
@@ -24,7 +34,12 @@ export default function HomeClient() {
             <div key={prod._id} className='product__card'>
               <h3 className='product__name'>{prod.name}</h3>
               <p className='product__description'>{prod.description}</p>
-              <p className='product__category'>Categoría: {prod.category_id}</p>
+              <p className='product__category'>
+                Category:{' '}
+                {typeof prod.category_id === 'string'
+                  ? prod.category_id
+                  : prod.category_id.name}
+              </p>
               <p className='product__price'>${prod.price}</p>
               <Button text='Add to cart' className='product__btn' />
             </div>
