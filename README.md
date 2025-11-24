@@ -79,29 +79,42 @@ The administrator can view all orders, and their status changes to "Delivered" w
 /restaurant-app
 │
 ├── /src
-│ ├── /components
-│ │ └── /common
-│ │   └── /buttons
-│ │ 
-│ ├── /context
-│ │ └── CartContext.tsx
-│ ├── /features
-│ │ ├── /client
-│ │ │ ├── /pages
-│ │ │ ├── /hooks
-│ │ │ ├── /services
-│ │ │ └── /types
-│ │ ├── /kitchen
-│ │ │ ├── /pages
-│ │ │ ├── /hooks
-│ │ │ └── /types
-│ │ └── /admin
-│ │ ├── /pages
-│ │ ├── /hooks
-│ │ └── /types
-│ ├── main.tsx
-│ └── App.tsx
-└── package.json
+│   ├── /components
+│   │   ├── /common
+│   │   │   └── /buttons
+│   │   └── /other-components
+│   │
+│   ├── /context
+│   │   └── CartContext.tsx
+│   │
+│   ├── /features
+│   │   ├── /client
+│   │   │   ├── /pages
+│   │   │   ├── /hooks
+│   │   │   ├── /services
+│   │   │   └── /types
+│   │   │
+│   │   ├── /kitchen
+│   │   │   ├── /pages
+│   │   │   ├── /hooks
+│   │   │   ├── /services
+│   │   │   └── /types
+│   │   │
+│   │   └── /admin
+│   │       ├── /pages
+│   │       ├── /hooks
+│   │       ├── /services
+│   │       └── /types
+│   │
+│   ├── App.tsx
+│   ├── main.tsx
+│   └── index.css
+│
+├── package.json
+├── tsconfig.json
+├── vite.config.ts
+└── README.md
+
 
 ---
 
