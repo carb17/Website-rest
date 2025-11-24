@@ -48,7 +48,13 @@ export default function HomeClient() {
               <Button
                 text=' Add to cart '
                 className='product__btn'
-                onClick={addToCart}
+                onClick={() =>
+                  addToCart({
+                    id: prod._id,
+                    name: prod.name,
+                    price: prod.price,
+                  })
+                }
               />
             </div>
           ))}

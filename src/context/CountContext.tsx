@@ -1,24 +1,42 @@
 import { createContext, useContext, useState, ReactNode } from 'react';
 
-interface CartContextProps {
-  cartCount: number;
-  addToCart: () => void;
-}
+import { CartContextProps, CartItem } from './types/types';
 
 const CartContext = createContext<CartContextProps>({
-  cartCount: 0,
+  cartItems: [],
   addToCart: () => {},
+  removeFromCart: () => {},
+  clearCart: () => {},
 });
 
 export const useCart = () => useContext(CartContext);
 
 export const CartProvider = ({ children }: { children: ReactNode }) => {
-  const [cartCount, setCartCount] = useState(0);
+  const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
-  const addToCart = () => setCartCount((prev) => prev + 1);
+  const addToCart = (item: Omit<CartItem, 'quantity'>) => {
+    setCartItems((prev) => {
+      const existingItem = prev.find((p) => p.id === item.id);
+      if (existingItem) {
+        return prev.map((p) =>
+          p.id === item.id ? { ...p, quantity: p.quantity + 1 } : p
+        );
+      } else {
+        return [...prev, { ...item, quantity: 1 }];
+      }
+    });
+  };
+
+  const removeFromCart = (id: string) => {
+    setCartItems((prev) => prev.filter((p) => p.id !== id));
+  };
+
+  const clearCart = () => setCartItems([]);
 
   return (
-    <CartContext.Provider value={{ cartCount, addToCart }}>
+    <CartContext.Provider
+      value={{ cartItems, addToCart, removeFromCart, clearCart }}
+    >
       {children}
     </CartContext.Provider>
   );
