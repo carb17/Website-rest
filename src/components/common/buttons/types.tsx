@@ -1,4 +1,3 @@
-import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { ReactNode } from 'react';
 
 export interface ButtonProps {
@@ -6,7 +5,7 @@ export interface ButtonProps {
   link?: string;
   onClick?: () => void;
   type?: 'button' | 'submit' | 'reset';
-  icon?: IconProp;
+  icon?: ReactNode;
   className?: string;
   children?: ReactNode;
 }

@@ -1,13 +1,12 @@
 /* ==================== PRODUCTS ==================== */
-
 .products__loading,
-.product__error {
+.products__error {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 70vh;
+  height: 60vh;
   font-size: 1.5rem;
-  font-weight: 500;
+  font-weight: bold;
 }
 
 .products__title {
@@ -22,6 +21,8 @@
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 2rem;
   padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .product__card {
@@ -71,14 +72,20 @@
 }
 
 .product__btn {
-  border: 1px solid #eee;
+  color: #fff;
+  border: none;
   border-radius: 5px;
   padding: 0.4rem;
-  background-color: #fff;
+  background-color: #000;
   transition: background-color 0.3s ease;
   cursor: pointer;
 }
 
 .product__btn:hover {
-  background-color: #eee;
+  background-color: #0f9d58;
+}
+
+.product__icon {
+  color: #ff6600;
+  font-size: 1rem;
 }

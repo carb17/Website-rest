@@ -17,7 +17,7 @@ export function useProducts() {
         const data = await FetchProducts();
         setProducts(data);
       } catch (err) {
-        setError('No se pudieron cargar los productos');
+        setError('The products could not be loaded.');
       } finally {
         setLoading(false);
       }

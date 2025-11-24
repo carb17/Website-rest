@@ -1,4 +1,3 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { ButtonProps } from './types';
 import { Link } from 'react-router-dom';
 
@@ -14,7 +13,7 @@ export const Button = ({
 }: ButtonProps) => {
   const content = (
     <>
-      {icon && <FontAwesomeIcon icon={icon} className='me-2' />}
+      {icon && <span>{icon}</span>}
       {text}
       {children}
     </>

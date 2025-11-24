@@ -6,25 +6,30 @@ import { Login } from './features/restaurant/auth/pages/Login';
 
 import { RutaPrivada } from './routes/PrivateRoute';
 
-import { Home } from './features/restaurant/pages/Home';
-import HomeClient from './features/client/pages/Home';
+import { CartProvider } from './context/CountContext';
+
+import { HomeAdm } from './features/restaurant/pages/HomeAdm';
+
+import HomeClient from './features/client/pages/HomeClient';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<HomeClient />} />
-        <Route path='/Login' element={<Login />} />
-        <Route
-          path='/Home'
-          element={
-            <RutaPrivada>
-              <Home />
-            </RutaPrivada>
-          }
-        />
-        <Route path='/*' element={<Navigate to='/HomeClient' replace />} />
-      </Routes>
+      <CartProvider>
+        <Routes>
+          <Route path='/' element={<HomeClient />} />
+          <Route path='/Login' element={<Login />} />
+          <Route
+            path='/Home'
+            element={
+              <RutaPrivada>
+                <HomeAdm />
+              </RutaPrivada>
+            }
+          />
+          <Route path='/*' element={<Navigate to='/HomeClient' replace />} />
+        </Routes>
+      </CartProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

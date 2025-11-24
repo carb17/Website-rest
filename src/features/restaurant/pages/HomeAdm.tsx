@@ -1,6 +1,6 @@
 import { Layout } from '../../../layout/pages/Layout';
 
-export function Home() {
+export function HomeAdm() {
   return (
     <>
       <Layout />

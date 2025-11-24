@@ -4,10 +4,14 @@ import { useProducts } from '../hooks/useProducts';
 
 import { Button } from '../../../components/common/buttons/Buttons';
 
+import { useCart } from '../../../context/CountContext';
+
 import '../styles/client.css';
 
 export default function HomeClient() {
   const { products, loading, error } = useProducts();
+
+  const { addToCart } = useCart();
 
   if (loading)
     return (
@@ -41,7 +45,11 @@ export default function HomeClient() {
                   : prod.category_id.name}
               </p>
               <p className='product__price'>${prod.price}</p>
-              <Button text='Add to cart' className='product__btn' />
+              <Button
+                text=' Add to cart '
+                className='product__btn'
+                onClick={addToCart}
+              />
             </div>
           ))}
         </div>
