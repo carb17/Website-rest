@@ -79,38 +79,29 @@ The administrator can view all orders, and their status changes to "Delivered" w
 /restaurant-app
 │
 ├── /src
-│ ├── /components 
+│ ├── /components
 │ │ └── /common
-│ │ └── Buttons.tsx
-│ ├── /context 
+│ │   └── /buttons
+│ │ 
+│ ├── /context
 │ │ └── CartContext.tsx
 │ ├── /features
-│ │ ├── /client # Client module
+│ │ ├── /client
 │ │ │ ├── /pages
 │ │ │ ├── /hooks
 │ │ │ ├── /services
-| | | ├── /types
-│ │ │ └── /styles
-│ │ ├── /kitchen # Kitchen module
+│ │ │ └── /types
+│ │ ├── /kitchen
 │ │ │ ├── /pages
 │ │ │ ├── /hooks
-│ │ │ ├── /services
-| | | ├── /types
-│ │ │ └── /styles
-│ │ └── /admin # Administration module
+│ │ │ └── /types
+│ │ └── /admin
 │ │ ├── /pages
 │ │ ├── /hooks
-│ │ ├── /services
-| | ├── /types
-│ │ └── /styles
-│ ├── /routes 
-│ ├── App.tsx
-│ └── main.tsx
-│
-├── /public # Public files (index.html, favicon, images)
-├── package.json
-├── tsconfig.json
-└── vite.config.ts
+│ │ └── /types
+│ ├── main.tsx
+│ └── App.tsx
+└── package.json
 
 ---
 
