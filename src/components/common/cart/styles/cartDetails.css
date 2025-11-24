@@ -1,8 +1,8 @@
 .cart__details {
   position: absolute;
   top: 3rem;
-  right: -10rem;
-  width: 250px;
+  right: 0;
+  max-width: 250px;
   max-height: 200px;
   display: flex;
   flex-direction: column;
