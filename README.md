@@ -1,54 +1,159 @@
-# React + TypeScript + Vite
+# 🍽️ Restaurant management
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![React](https://img.shields.io/badge/React-v18-blue)
+![TypeScript](https://img.shields.io/badge/TypeScript-v5.x-blueviolet)
+![Vite](https://img.shields.io/badge/Vite-v5.x-lightgrey)
+![CSS3](https://img.shields.io/badge/CSS3-3.0-blue)
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Order management system for a restaurant developed in React, TypeScript and Vite, with customer control, kitchen and order management.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🚀 Project Description
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+**Restaurant App** is a web application that allows for efficient management of restaurant orders:
+
+Customers can view the menu and add items to their cart.
+
+The kitchen receives orders in "Preparing" status and can mark them as dispatched.
+
+The administrator can view all orders, and their status changes to "Delivered" when they are completed.
+
+---
+
+## ⚙️ Funcionalidades principales
+
+### 👤 Cliente
+
+- Visualización del menú de productos con detalles y categorías.
+
+- Agregar productos al carrito y confirmar el pedido.
+
+- Gestión de pagos: el cliente puede ver el total del pedido y realizar el pago correspondiente.
+
+### 🍳 Cocina
+
+- Recepción de pedidos en estado “En preparación”.
+
+- Actualización del estado a “Despachado” cuando los productos están listos para entrega.
+
+### 🏢 Administración
+
+- Visualización de todos los pedidos de clientes.
+
+- Actualización automática del estado de los pedidos a “Entregado”.
+
+- Gestión de cobros: registro y control de los pagos de cada pedido.
+
+---
+
+## 🛠️ Technologies Used
+
+- React + TypeScript (frontend interface and logic)
+
+- Vite (bundler and HMR)
+
+- React Router (page navigation)
+
+- Context API (global cart state)
+
+- FontAwesome (icons)
+
+- CSS Modules (styles)
+
+---
+
+## 🔐 Security
+
+- Access to **Administration** and **Kitchen** is restricted and requires a login.
+
+- Passwords are securely **hashed**.
+
+- Data validation is used on forms to prevent errors or malicious data.
+
+---
+
+## 📂 General Structure
+
+/restaurant-app
+│
+├── /src
+│ ├── /components 
+│ │ └── /common
+│ │ └── Buttons.tsx
+│ ├── /context 
+│ │ └── CartContext.tsx
+│ ├── /features
+│ │ ├── /client # Client module
+│ │ │ ├── /pages
+│ │ │ ├── /hooks
+│ │ │ ├── /services
+| | | ├── /types
+│ │ │ └── /styles
+│ │ ├── /kitchen # Kitchen module
+│ │ │ ├── /pages
+│ │ │ ├── /hooks
+│ │ │ ├── /services
+| | | ├── /types
+│ │ │ └── /styles
+│ │ └── /admin # Administration module
+│ │ ├── /pages
+│ │ ├── /hooks
+│ │ ├── /services
+| | ├── /types
+│ │ └── /styles
+│ ├── /routes 
+│ ├── App.tsx
+│ └── main.tsx
+│
+├── /public # Public files (index.html, favicon, images)
+├── package.json
+├── tsconfig.json
+└── vite.config.ts
+
+---
+
+## 💡 Installation and Use
+
+1. **Clone the repository:**
+```bash
+git clone https://github.com/your-username/restaurant-app.git
+```
+2. **Go to the project directory:**
+```bash
+cd restaurant-app
+```
+3. **Install dependencies:**
+```bash
+npm install  
+# or
+yarn
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+4. **Start the development server:**
+```bash
+npm run dev
+# or
+yarn dev
 ```
+
+This will start the application in development mode, usually at:
+
+http://localhost:5173
+
+5. **Access the application:**
+
+- Customer homepage: view products and add them to the cart.
+
+- Kitchen page: view orders in preparation and update them.
+
+- Administration page: view all orders and update their status to "Delivered".
+
+6. **Build for production:** 
+```bash
+npm run build
+# or
+yarn build
+```
+The build will be generated in the /dist folder and can be deployed on any static server.
