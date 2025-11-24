@@ -74,50 +74,6 @@ The administrator can view all orders, and their status changes to "Delivered" w
 
 ---
 
-## 📂 General Structure
-
-/restaurant-app
-│
-├── /src
-│   ├── /components
-│   │   ├── /common
-│   │   │   └── /buttons
-│   │   └── /other-components
-│   │
-│   ├── /context
-│   │   └── CartContext.tsx
-│   │
-│   ├── /features
-│   │   ├── /client
-│   │   │   ├── /pages
-│   │   │   ├── /hooks
-│   │   │   ├── /services
-│   │   │   └── /types
-│   │   │
-│   │   ├── /kitchen
-│   │   │   ├── /pages
-│   │   │   ├── /hooks
-│   │   │   ├── /services
-│   │   │   └── /types
-│   │   │
-│   │   └── /admin
-│   │       ├── /pages
-│   │       ├── /hooks
-│   │       ├── /services
-│   │       └── /types
-│   │
-│   ├── App.tsx
-│   ├── main.tsx
-│   └── index.css
-│
-├── package.json
-├── tsconfig.json
-├── vite.config.ts
-└── README.md
-
-
----
-
 ## 💡 Installation and Use
 
 1. **Clone the repository:**
