@@ -5,7 +5,7 @@ export function Footer() {
     <footer className='footer'>
       <div className='footer__container'>
         <p className='footer__text'>
-          &copy; {new Date().getFullYear()} Desarrollado por{' '}
+          © {new Date().getFullYear()} Restaurant · Desarrollo web:{' '}
           <a
             href={PORTAFOLIO}
             target='_blank'
